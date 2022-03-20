@@ -3,12 +3,19 @@
 This is a demo cli application that helps to monitor userbase growth across a period of time. Please note that you need to be connected to the internet to use this tool.
 
 ## Installation
-### Set up
+### Set up [unix]
 ```bash
 cd foonda_mate
 python3 -m venv env
 source ./env/bin/activate
 pip3 install -r requirements.txt
+```
+### Set up [win7>]
+```bash
+cd foonda_mate
+python3 -m venv env
+env\Scripts\activate
+pip3 install -r requirements-win7.txt
 ```
 
 ### Run tests
