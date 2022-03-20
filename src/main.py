@@ -3,6 +3,7 @@ import requests
 import fire
 import plotext as plt
 import matplotlib.pyplot as plt2
+import sys
 
 
 api_link = 'http://sam-user-activity.eu-west-1.elasticbeanstalk.com/'
@@ -19,11 +20,11 @@ class UserbaseCLI(object):
         """Date Format [dd-mm-yyyy] """
         data, error_messsage = self._userbase.filter_data(start_date, end_date)
         if error_messsage == None:
-            try:
+            if sys.platform == 'darwin':
                 plt.bar(data['date_string'], data['users'])
                 plt.title(f"Userbase from {start_date} to {end_date}")
                 plt.show()
-            except:
+            else:
                 plt2.barh(data['date_string'], data['users'])
                 plt2.title(f"Userbase from {start_date} to {end_date}")
                 plt2.show()
