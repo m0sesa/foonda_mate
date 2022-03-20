@@ -20,7 +20,6 @@ class UserbaseCLI(object):
         data, error_messsage = self._userbase.filter_data(start_date, end_date)
         if error_messsage == None:
             try:
-                3/0
                 plt.bar(data['date_string'], data['users'])
                 plt.title(f"Userbase from {start_date} to {end_date}")
                 plt.show()
